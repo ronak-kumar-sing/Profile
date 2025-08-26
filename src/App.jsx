@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Github, ExternalLink, Mail, Phone, MapPin, Code, Briefcase, GraduationCap } from 'lucide-react';
-import ProfileCard from './Components/ProfileCard/ProfileCard';
-import SplitText from './Components/TextAnimations/SplitText/SplitText';
-import ScrollReveal from './Components/TextAnimations/ScrollReveal/ScrollReveal';
+import ProfileCard from './components/ProfileCard/ProfileCard';
+import SplitText from './components/TextAnimations/SplitText/SplitText';
+import ScrollReveal from './components/TextAnimations/ScrollReveal/ScrollReveal';
 import ShinyText from './components/TextAnimations/ShinyText/ShinyText';
 import TiltedCard from './components/Components/TiltedCard/TiltedCard';
-import RotatingText from './Components/TextAnimations/RotatingText/RotatingText'
+import RotatingText from './components/TextAnimations/RotatingText/RotatingText'
 
 
-import LogoLoop from './Components/Animations/LogoLoop/LogoLoop';
+import LogoLoop from './components/Animations/LogoLoop/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 
 function App() {

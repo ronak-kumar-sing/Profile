@@ -26,31 +26,42 @@ function App() {
     { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
   ];
   const [activeSection, setActiveSection] = useState('home');
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const handleCardClick = (project, index) => {
+    // Toggle expanded state for visual effect
+    setExpandedIndex(prev => (prev === index ? null : index));
+
+    // Open live URL in a new tab if available
+    if (project.liveUrl && project.liveUrl !== '#') {
+      window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   const projects = [
     {
-      title: "AI Tutoring Tool",
-      description: "An innovative AI-powered tutoring platform built during a hackathon. Features personalized learning paths and intelligent question generation.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
-      tech: ["React.js", "AI/ML", "Node.js"],
-      liveUrl: "https://att-nine.vercel.app/",
-      githubUrl: "#"
+      title: "Make-it Web & App",
+      description: "A comprehensive productivity and study companion mobile app with AI-powered study resources using Google Gemini 2.0.",
+      image: "/makeit.png",
+      tech: ["React Native", "Expo", "Next.js"],
+      liveUrl: "https://make-it-three.vercel.app/",
+      githubUrl: "https://github.com/ronak-kumar-sing/Make-it-app"
     },
     {
       title: "CareerCompass",
       description: "A comprehensive career development platform with AI-powered assessments, personalized roadmaps, and job matching features.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68e2c6b7c8?w=600&h=400&fit=crop",
+      image: "/Career.png",
       tech: ["PHP", "MySQL", "Google Gemini API", "Tailwind CSS"],
       liveUrl: "http://careercompassss.infinityfreeapp.com/",
       githubUrl: "https://github.com/ronak-kumar-sing/College-Project"
     },
     {
-      title: "Make-it App",
-      description: "A comprehensive productivity and study companion mobile app with AI-powered study resources using Google Gemini 2.0.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      tech: ["React Native", "Expo", "Google Gemini 2.0"],
-      liveUrl: "#",
-      githubUrl: "https://github.com/ronak-kumar-sing/Make-it-app"
+      title: "StudentNest 🏠✨",
+      description: "A modern student accommodation platform connecting students with verified property owners for traditional rooms and PG accommodations. Features price negotiation, real-time chat, smart filtering, and responsive design.",
+      image: "/studentnest.png",
+      tech: ["React.js", "Vite", "TailwindCSS", "Socket.IO", "Framer Motion", "TypeScript"],
+      liveUrl: "https://studentnest-eight.vercel.app/",
+      githubUrl: "https://github.com/ronak-kumar-sing/studentnest"
     }
   ];
 
@@ -65,8 +76,8 @@ function App() {
     {
       title: "App Development Intern",
       company: "GDSE Lead",
-      duration: "Current",
-      description: "Working in frontend development for mobile applications, focusing on user interface design and implementation.",
+      duration: "Worded",
+      description: "Worked on frontend development for mobile applications, with a strong focus on designing and implementing user-friendly interfaces.",
       type: "Internship"
     }
   ];
@@ -162,8 +173,8 @@ function App() {
                 blurStrength={10}
               >
 
-                I'm Ronak Kumar Singh, a passionate web and mobile application developer with a strong foundation in modern JavaScript frameworks.
-                Currently working as an App Development Intern at GDSE Lead, where I focus on frontend development and user experience design.
+                Hi, I'm Ronak Kumar Singh — a web and mobile app developer who enjoys turning ideas into real products.
+                I’ve had the chance to work as an App Development Intern with the GDSE Lead, where I learned a lot while building frontend experiences with React Native.
               </ScrollReveal>
 
               <ScrollReveal
@@ -173,8 +184,8 @@ function App() {
                 blurStrength={10}
               >
 
-                My journey in software development has led me to work with cutting-edge technologies like React.js, Next.js, React Native, and AI APIs.
-                I'm particularly interested in integrating AI capabilities into web applications to create more intelligent and user-friendly experiences.
+                Over time, I’ve explored tools like React.js, Next.js, React Native, and even played around with AI APIs.
+                What excites me most is creating apps that feel smooth, simple, and genuinely helpful for people.
               </ScrollReveal>
 
               <ScrollReveal
@@ -183,21 +194,38 @@ function App() {
                 baseRotation={5}
                 blurStrength={10}
               >
-                When I'm not coding, I enjoy participating in hackathons and building projects that solve real-world problems.
-                My goal is to contribute to innovative solutions that make technology more accessible and beneficial for everyone.
+                Outside of coding, I love joining hackathons, experimenting with new ideas, and building projects just for fun.
+                My bigger dream is to use technology in ways that make everyday life easier and a little more enjoyable for everyone.
               </ScrollReveal>
 
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-purple-900/20 p-6 rounded-lg border border-purple-500/30">
-                <Code className="w-8 h-8 text-purple-400 mb-3" />
-                <h3 className="font-semibold mb-2">Frontend Focus</h3>
-                <p className="text-sm text-gray-400">Specialized in React ecosystem and modern UI/UX</p>
+              {/* Frontend */}
+              <div className="bg-purple-900/20 p-6 rounded-lg border border-purple-500/30 hover:scale-105 transition-transform duration-300">
+                <Code className="w-8 h-8 text-purple-400 mb-3 animate-pulse" />
+                <h3 className="font-semibold mb-2">Frontend Wizard ✨</h3>
+                <p className="text-sm text-gray-400">Crafting sleek, responsive UIs with React, React Native & Tailwind — turning ideas into experiences.</p>
               </div>
-              <div className="bg-blue-900/20 p-6 rounded-lg border border-blue-500/30">
-                <Briefcase className="w-8 h-8 text-blue-400 mb-3" />
-                <h3 className="font-semibold mb-2">Professional</h3>
-                <p className="text-sm text-gray-400">Currently interning at GDSE Lead</p>
+
+              {/* Backend */}
+              <div className="bg-blue-900/20 p-6 rounded-lg border border-blue-500/30 hover:scale-105 transition-transform duration-300">
+                <Briefcase className="w-8 h-8 text-blue-400 mb-3 animate-bounce" />
+                <h3 className="font-semibold mb-2">Backend Explorer 🚀</h3>
+                <p className="text-sm text-gray-400">Diving into Node.js, APIs & databases — building the brain behind the beauty.</p>
+              </div>
+
+              {/* Projects */}
+              <div className="bg-green-900/20 p-6 rounded-lg border border-green-500/30 hover:scale-105 transition-transform duration-300">
+                <GraduationCap className="w-8 h-8 text-green-400 mb-3 animate-spin-slow" />
+                <h3 className="font-semibold mb-2">Project Builder ⚡</h3>
+                <p className="text-sm text-gray-400">From <span className="text-green-300 font-medium">Make-it</span> to <span className="text-green-300 font-medium">BGMI Advisor</span>, I love solving problems through code.</p>
+              </div>
+
+              {/* Learner */}
+              <div className="bg-pink-900/20 p-6 rounded-lg border border-pink-500/30 hover:scale-105 transition-transform duration-300">
+                <Code className="w-8 h-8 text-pink-400 mb-3 animate-pulse" />
+                <h3 className="font-semibold mb-2">Forever Learner 📚</h3>
+                <p className="text-sm text-gray-400">Curious, adaptable & hungry for challenges — every project is a new adventure.</p>
               </div>
             </div>
           </div>
@@ -249,53 +277,62 @@ function App() {
             <ShinyText text="Featured Projects" />
           </h2>
           <div className="grid lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="group">
-                <TiltedCard
-                  imageSrc={project.image}
-                  altText={project.title}
-                  captionText={project.title}
-                  overlayContent={
-                    <div>
-                      <h3 className="font-bold text-lg mb-2">{project.title}</h3>
-                      <div className="flex gap-2 mb-4">
-                        {project.liveUrl !== '#' && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-purple-600 hover:bg-purple-700 p-2 rounded-full transition-colors"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        )}
-                        {project.githubUrl !== '#' && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-gray-700 hover:bg-gray-600 p-2 rounded-full transition-colors"
-                          >
-                            <Github className="w-4 h-4" />
-                          </a>
-                        )}
+            {projects.map((project, index) => {
+              const isExpanded = expandedIndex === index;
+              return (
+                <div
+                  key={index}
+                  className={`group cursor-pointer transform transition-all duration-300 ${isExpanded ? 'scale-105' : 'hover:scale-102'}`}
+                  onClick={() => handleCardClick(project, index)}
+                >
+                  <TiltedCard
+                    imageSrc={project.image}
+                    altText={project.title}
+                    captionText={project.title}
+                    overlayContent={
+                      <div>
+                        <h3 className="font-bold text-lg mb-2">{project.title}</h3>
+                        <div className="flex gap-2 mb-4">
+                          {project.liveUrl !== '#' && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="bg-purple-600 hover:bg-purple-700 p-2 rounded-full transition-colors"
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                            </a>
+                          )}
+                          {project.githubUrl !== '#' && (
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="bg-gray-700 hover:bg-gray-600 p-2 rounded-full transition-colors"
+                            >
+                              <Github className="w-4 h-4" />
+                            </a>
+                          )}
+                        </div>
                       </div>
+                    }
+                  />
+                  <div className={`mt-6 p-6 bg-gray-900/50 rounded-lg backdrop-blur-sm transition-all duration-300 ${isExpanded ? 'lg:col-span-2 scale-x-105' : ''}`}>
+                    <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                    <p className="text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-purple-600/30 text-purple-300 rounded-full text-sm">
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-                  }
-                />
-                <div className="mt-6 p-6 bg-gray-900/50 rounded-lg backdrop-blur-sm">
-                  <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-purple-600/30 text-purple-300 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

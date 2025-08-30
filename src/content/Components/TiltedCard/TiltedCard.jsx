@@ -1,5 +1,5 @@
 /*
-	Installed from https://reactbits.dev/tailwind/
+  Installed from https://reactbits.dev/tailwind/
 */
 
 import { useRef, useState } from "react";
@@ -17,8 +17,8 @@ export default function TiltedCard({
   captionText = "",
   containerHeight = "300px",
   containerWidth = "100%",
-  imageHeight = "300px",
-  imageWidth = "300px",
+  imageHeight = "280px",
+  imageWidth = "400px",
   scaleOnHover = 1.1,
   rotateAmplitude = 14,
   showMobileWarning = true,

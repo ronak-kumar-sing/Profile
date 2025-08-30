@@ -10,6 +10,7 @@ import RotatingText from './content/TextAnimations/RotatingText/RotatingText.jsx
 
 import LogoLoop from './content/Animations/LogoLoop/LogoLoop.jsx';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import ContactSection from './content/Components/Contact';
 
 function App() {
   const techLogos = [
@@ -272,17 +273,17 @@ function App() {
 
       {/* Projects Section */}
       <section className="py-20 bg-gradient-to-b from-transparent to-blue-900/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <h2 className="text-4xl font-bold text-center mb-16">
             <ShinyText text="Featured Projects" />
           </h2>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8 h">
             {projects.map((project, index) => {
               const isExpanded = expandedIndex === index;
               return (
                 <div
                   key={index}
-                  className={`group cursor-pointer transform transition-all duration-300 ${isExpanded ? 'scale-105' : 'hover:scale-102'}`}
+                  className={`  group cursor-pointer transform transition-all duration-300 ${isExpanded ? 'scale-105' : 'hover:scale-102'}`}
                   onClick={() => handleCardClick(project, index)}
                 >
                   <TiltedCard
@@ -363,72 +364,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-b from-transparent to-purple-900/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            <ShinyText text="Let's Connect" />
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
-                <p className="text-gray-300 mb-8">
-                  I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
-                  Feel free to reach out!
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <Mail className="w-5 h-5 text-purple-400 mr-4" />
-                    <span className="text-gray-300">ronak@example.com</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Phone className="w-5 h-5 text-purple-400 mr-4" />
-                    <span className="text-gray-300">+91 XXXXX XXXXX</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-5 h-5 text-purple-400 mr-4" />
-                    <span className="text-gray-300">India</span>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-lg border border-purple-500/30 rounded-xl p-8">
-                <form className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
-                      placeholder="Your Name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                    <textarea
-                      rows="4"
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
-                      placeholder="Your message..."
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 font-semibold"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
 
       {/* Footer */}
       <footer className="border-t border-purple-500/20 py-8">
@@ -441,7 +377,7 @@ function App() {
               <a href="https://github.com/ronak-kumar-sing" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="mailto:ronak@example.com" className="text-gray-400 hover:text-white transition-colors">
+              <a href="mailto:ronakkumar20062006@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>

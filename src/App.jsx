@@ -146,11 +146,11 @@ function App() {
                 name="Ronak Kumar"
                 title="Software Engineer"
                 handle="ronakkumar"
-                iconUrl='/src/assets/icon.png'
+                iconUrl='/icon.png'
                 status="Online"
                 contactText="Contact Me"
-                avatarUrl="/src/assets/profile.png"
-                miniAvatarUrl="/src/assets/hacker.png"
+                avatarUrl="/profile.png"
+                miniAvatarUrl="/hacker.png"
                 onContactClick={() => setActiveSection('contact')}
               />
             </div>

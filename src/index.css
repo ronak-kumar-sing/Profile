@@ -1,19 +1,72 @@
 @import "tailwindcss";
 
-/* globals.css */
+/* Global responsive optimizations */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar */
+}
 
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  .responsive-text {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  
+  .responsive-heading {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+  
+  .responsive-padding {
+    padding: 1rem;
+  }
+}
+
+/* Prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+}
+
+/* Better touch targets for mobile */
+@media (hover: none) {
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .hover\:scale-102:hover {
+    transform: none;
+  }
+}
+
+/* Enhanced navigation styling */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background-color: #a855f7;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Smooth animations */
 @keyframes shine {
   0% {
     background-position: 200% 0;
   }
-
   100% {
     background-position: -200% 0;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 @keyframes fade-in-up {
@@ -21,7 +74,6 @@ html {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);

@@ -27,7 +27,7 @@ function App() {
   const handleNavClick = (section) => {
     setActiveSection(section.toLowerCase());
     setMobileMenuOpen(false);
-    
+
     // Smooth scroll to section
     const element = document.getElementById(section.toLowerCase());
     if (element) {
@@ -51,7 +51,7 @@ function App() {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
@@ -91,11 +91,11 @@ function App() {
     },
     {
       title: "StudentNest 🏠✨",
-      description: "A modern student accommodation platform connecting students with verified property owners for traditional rooms and PG accommodations. Features price negotiation, real-time chat, smart filtering, and responsive design.",
+      description: "A modern student accommodation platform connecting students with verified property owners for traditional rooms and PG accommodations. Features price negotiation, real-time chat, smart filtering, and responsive design. Currently under development.",
       image: "/studentnest.png",
-      tech: ["React.js", "Vite", "TailwindCSS", "Socket.IO", "Framer Motion", "TypeScript"],
-      liveUrl: "https://studentnest-eight.vercel.app/",
-      githubUrl: "https://github.com/ronak-kumar-sing/studentnest"
+      tech: ["Next.js", "Tailwind CSS", "JavaScript"],
+      liveUrl: "https://student-nest-chi.vercel.app/",
+      githubUrl: "https://github.com/ronak-kumar-sing/student-nest.git"
     }
   ];
 
@@ -126,16 +126,15 @@ function App() {
               <div className="text-xl sm:text-2xl font-bold">
                 <ShinyText text="Ronak Kumar Singh" speed={3} className="font-bold text-xl sm:text-2xl lg:text-3xl" />
               </div>
-              
+
               {/* Desktop Navigation */}
               <div className="hidden md:flex space-x-4 lg:space-x-8">
                 {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Resume', 'Contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => handleNavClick(item)}
-                    className={`nav-link hover:text-purple-400 transition-colors cursor-pointer text-sm lg:text-base ${
-                      activeSection === item.toLowerCase() ? 'text-purple-400 active' : 'text-white'
-                    }`}
+                    className={`nav-link hover:text-purple-400 transition-colors cursor-pointer text-sm lg:text-base ${activeSection === item.toLowerCase() ? 'text-purple-400 active' : 'text-white'
+                      }`}
                   >
                     {item}
                   </button>
@@ -159,9 +158,8 @@ function App() {
                     <button
                       key={item}
                       onClick={() => handleNavClick(item)}
-                      className={`block w-full text-left hover:text-purple-400 transition-colors cursor-pointer py-2 ${
-                        activeSection === item.toLowerCase() ? 'text-purple-400' : 'text-white'
-                      }`}
+                      className={`block w-full text-left hover:text-purple-400 transition-colors cursor-pointer py-2 ${activeSection === item.toLowerCase() ? 'text-purple-400' : 'text-white'
+                        }`}
                     >
                       {item}
                     </button>
@@ -202,7 +200,7 @@ function App() {
                   />
                 </div>
               </div>
-              
+
               {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
                 <a
@@ -213,7 +211,7 @@ function App() {
                   <Download className="w-4 h-4 mr-2 group-hover:translate-y-1 transition-transform" />
                   Download Resume
                 </a>
-                
+
                 <button
                   onClick={() => handleNavClick('Contact')}
                   className="bg-transparent border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg transition-all duration-300 font-semibold flex items-center justify-center cursor-pointer"
@@ -314,7 +312,7 @@ function App() {
           </div>
         </div>
       </section>
-      
+
       {/* Tech Stack Animation */}
       <div className="py-8 sm:py-12 relative overflow-hidden" style={{ height: '120px' }}>
         <LogoLoop
@@ -459,13 +457,13 @@ function App() {
                 <div className="bg-purple-600/20 p-6 rounded-full">
                   <FileText className="w-12 h-12 sm:w-16 sm:h-16 text-purple-400" />
                 </div>
-                
+
                 <div className="text-center">
                   <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">
                     Download My Resume
                   </h3>
                   <p className="text-gray-300 mb-6 text-sm sm:text-base max-w-2xl">
-                    Get a comprehensive overview of my experience, skills, and achievements. 
+                    Get a comprehensive overview of my experience, skills, and achievements.
                     Download my latest resume to learn more about my professional journey.
                   </p>
                 </div>
@@ -479,7 +477,7 @@ function App() {
                     <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:translate-y-1 transition-transform" />
                     Download Resume
                   </a>
-                  
+
                   <a
                     href="/Ronak_Kumar (1).pdf"
                     target="_blank"

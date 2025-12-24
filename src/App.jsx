@@ -86,7 +86,7 @@ function App() {
       description: "A comprehensive career development platform with AI-powered assessments, personalized roadmaps, and job matching features.",
       image: "/Career.png",
       tech: ["PHP", "MySQL", "Google Gemini API", "Tailwind CSS"],
-      liveUrl: "http://careercompassss.infinityfreeapp.com/",
+      liveUrl: "https://cricket-hub-y63h.vercel.app/",
       githubUrl: "https://github.com/ronak-kumar-sing/College-Project"
     },
     {
@@ -94,7 +94,7 @@ function App() {
       description: "A modern student accommodation platform connecting students with verified property owners for traditional rooms and PG accommodations. Features price negotiation, real-time chat, smart filtering, and responsive design. Currently under development.",
       image: "/studentnest.png",
       tech: ["Next.js", "Tailwind CSS", "JavaScript"],
-      liveUrl: "https://student-nest-chi.vercel.app/",
+      liveUrl: "https://student-nest-infotsav.vercel.app/",
       githubUrl: "https://github.com/ronak-kumar-sing/student-nest.git"
     }
   ];

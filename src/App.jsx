@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink, Mail, Code, Briefcase, GraduationCap, Menu, X, Download, FileText } from 'lucide-react';
+import { Github, ExternalLink, Mail, Code, Briefcase, GraduationCap, Menu, X, Download, FileText, Play } from 'lucide-react';
 import ProfileCard from './content/Components/ProfileCard/ProfileCard.jsx';
 import SplitText from './content/TextAnimations/SplitText/SplitText.jsx';
 import ScrollReveal from './content/TextAnimations/ScrollReveal/ScrollReveal.jsx';
@@ -7,14 +7,32 @@ import ShinyText from './content/TextAnimations/ShinyText/ShinyText.jsx';
 import TiltedCard from './content/Components/TiltedCard/TiltedCard.jsx';
 import RotatingText from './content/TextAnimations/RotatingText/RotatingText.jsx';
 import LogoLoop from './content/Animations/LogoLoop/LogoLoop.jsx';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPhp, SiMysql } from 'react-icons/si';
 import ContactSection from './content/Components/Contact';
+import MobileFrame from './components/MobileFrame.jsx';
 
 function App() {
   // State management
   const [activeSection, setActiveSection] = useState('home');
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileFrameData, setMobileFrameData] = useState({ isOpen: false, videoUrl: '', title: '' });
+
+  // Handlers
+  const handleWatchDemo = (project) => {
+    // You can replace these with actual video URLs for each project
+    const demoVideos = {
+      "Make-it Web & App": "https://assets.mixkit.co/videos/preview/mixkit-mobile-phone-with-green-screen-at-a-desk-4482-large.mp4",
+      "CareerCompass": "https://assets.mixkit.co/videos/preview/mixkit-man-working-with-various-screens-41489-large.mp4",
+      "StudentNest 🏠✨": "https://assets.mixkit.co/videos/preview/mixkit-hands-typing-on-a-laptop-keyboard-41525-large.mp4"
+    };
+
+    setMobileFrameData({
+      isOpen: true,
+      videoUrl: demoVideos[project.title] || "",
+      title: project.title
+    });
+  };
 
   // Handlers
   const handleCardClick = (project, index) => {
@@ -117,10 +135,24 @@ function App() {
   ];
 
   return (
-    <div className='bg-[#060010] min-h-screen text-white' style={{ fontFamily: 'Roboto Mono, monospace' }}>
+    <div className='bg-[#030014] min-h-screen text-white overflow-hidden' style={{ fontFamily: 'Roboto Mono, monospace' }}>
+
+      {/* Ambient Background Glow */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/20 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/20 rounded-full blur-[120px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+      </div>
+
+      <MobileFrame
+        isOpen={mobileFrameData.isOpen}
+        onClose={() => setMobileFrameData({ ...mobileFrameData, isOpen: false })}
+        videoUrl={mobileFrameData.videoUrl}
+        title={mobileFrameData.title}
+      />
+
       {/* Navigation */}
-      <div className='fixed top-0 left-0 right-0 z-50'>
-        <nav className="bg-[#060010]/95 backdrop-blur-lg shadow-md relative">
+      <div className='fixed top-0 left-0 right-0 z-50 transition-all duration-300'>
+        <nav className="glass-nav shadow-lg shadow-purple-900/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="text-xl sm:text-2xl font-bold">
@@ -204,7 +236,7 @@ function App() {
               {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
                 <a
-                  href="/Ronak_Kumar (1).pdf"
+                  href="/resume.pdf"
                   download="Ronak_Kumar_Resume.pdf"
                   className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 font-semibold flex items-center justify-center group cursor-pointer"
                 >
@@ -374,15 +406,22 @@ function App() {
                     captionText={project.title}
                     overlayContent={
                       <div>
-                        <h3 className="font-bold text-base sm:text-lg mb-2">{project.title}</h3>
+                        <h3 className="font-bold text-base sm:text-lg mb-2 text-glow">{project.title}</h3>
                         <div className="flex gap-2 mb-4">
+                          <button
+                            onClick={(e) => { e.stopPropagation(); handleWatchDemo(project); }}
+                            className="bg-purple-600 hover:bg-purple-500 text-white p-2 rounded-full transition-all hover:scale-110 shadow-lg shadow-purple-600/30 group/btn"
+                            title="Watch Demo"
+                          >
+                            <Play className="w-4 h-4 fill-current" />
+                          </button>
                           {project.liveUrl !== '#' && (
                             <a
                               href={project.liveUrl}
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="bg-purple-600 hover:bg-purple-700 p-2 rounded-full transition-colors cursor-pointer"
+                              className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full transition-colors cursor-pointer border border-gray-700 hover:border-gray-500"
                             >
                               <ExternalLink className="w-4 h-4" />
                             </a>
@@ -393,7 +432,7 @@ function App() {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="bg-gray-700 hover:bg-gray-600 p-2 rounded-full transition-colors cursor-pointer"
+                              className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full transition-colors cursor-pointer border border-gray-700 hover:border-gray-500"
                             >
                               <Github className="w-4 h-4" />
                             </a>
@@ -402,7 +441,7 @@ function App() {
                       </div>
                     }
                   />
-                  <div className={`mt-4 sm:mt-6 p-4 sm:p-6 bg-gray-900/50 rounded-lg backdrop-blur-sm transition-all duration-300 ${isExpanded ? 'scale-105 border-2 border-purple-500/50' : ''}`}>
+                  <div className={`mt-6 p-6 glass-premium rounded-xl transition-all duration-300 ${isExpanded ? 'scale-105 border-purple-500 ring-2 ring-purple-500/20' : 'hover:border-purple-500/50'}`}>
                     <h3 className="text-lg sm:text-xl font-semibold mb-3">{project.title}</h3>
                     <p className="text-gray-300 mb-4 text-sm sm:text-base">{project.description}</p>
                     <div className="flex flex-wrap gap-2">

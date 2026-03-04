@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Ronak Kumar | Portfolio",
   description:
     "Software engineer focused on building premium web and mobile experiences",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export const viewport: Viewport = {

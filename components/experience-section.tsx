@@ -25,9 +25,9 @@ const EXPERIENCE = [
   {
     type: "edu",
     id: "cec_cse",
-    company: "Chandigarh Engineering College",
+    company: "Lovely Professional University",
     role: "B.Tech in Computer Science",
-    location: "Chandigarh, India",
+    location: "Punjab, India",
     duration: "2023 - 2027",
     description:
       "Pursuing Bachelor of Technology in Computer Science. Active participant in hackathons, coding clubs, and college tech events. Focusing on full-stack development and algorithms.",

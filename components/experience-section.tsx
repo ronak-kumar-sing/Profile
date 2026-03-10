@@ -8,7 +8,7 @@ const EXPERIENCE = [
   {
     type: "work",
     id: "gdse_lead",
-    company: "GDSE Lead",
+    company: "Runfly",
     role: "App Development Intern",
     location: "Remote",
     duration: "2024 - Present",
@@ -71,7 +71,7 @@ const ACHIEVEMENTS = [
     color: "#E99287",
   },
   {
-    title: "GDSE Lead Intern",
+    title: "Runfly Lead Intern",
     subtitle: "App Development",
     description:
       "Gained professional experience in mobile app development with a focus on UI/UX and React Native.",

@@ -26,7 +26,7 @@ const INFO = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Chandigarh, India",
+    value: "Jalandhar, India",
     href: null,
   },
 ];

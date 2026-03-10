@@ -75,7 +75,7 @@ export default function HeroSection({ setActiveTab }: HeroProps) {
               </div>
             </div>
             <p className="font-mono text-xs text-text-muted">
-              @ronak-kumar-sing • Chandigarh, India
+              @ronak-kumar-sing • Jalandhar, India
             </p>
           </motion.div>
 

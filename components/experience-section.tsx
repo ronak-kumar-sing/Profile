@@ -86,6 +86,65 @@ const ACHIEVEMENTS = [
   },
 ];
 
+const CERTIFICATIONS = [
+  {
+    title: "C++ Programming: OOPs and DSA",
+    issuer: "CSE Pathshala",
+    date: "Jul 2025",
+    href: "https://drive.google.com/file/d/1DxMJ4ev_J-889YCc6_PLl8ZeSEHnqUOE/view?usp=sharing",
+    textClass: "text-accent-blue",
+    borderClass: "border-t-accent-blue",
+  },
+  {
+    title: "Cloud Computing",
+    issuer: "NPTEL",
+    date: "Nov 2025",
+    href: "https://drive.google.com/file/d/13eT1BUVIrjIOOxcR-5DG7CPVCTnjS5hY/view?usp=sharing",
+    textClass: "text-accent-green",
+    borderClass: "border-t-accent-green",
+  },
+  {
+    title: "Master Generative AI & Generative AI tools",
+    issuer: "Udemy",
+    date: "Aug 2025",
+    href: "https://springboard.udemy.com/certificate/UC-3316e042-4f16-4e2c-bfc7-04c9326f903b/",
+    textClass: "text-accent-orange",
+    borderClass: "border-t-accent-orange",
+  },
+  {
+    title: "Computational Theory",
+    issuer: "Infosys",
+    date: "Aug 2025",
+    href: "https://infyspringboard.onwingspan.com/public-assets/infosysheadstart/cert/lex_auth_0135015511562403847605/1-00474f1b-8131-4192-ada1-ab1e39f08ce6.pdf",
+    textClass: "text-accent-blue",
+    borderClass: "border-t-accent-blue",
+  },
+  {
+    title: "Prompt Engineering: ChatGPT, Generative AI & LLM",
+    issuer: "Udemy",
+    date: "Oct 2024",
+    href: "https://springboard.udemy.com/certificate/UC-a2cb5e04-1d04-4a75-b556-4eb0b24990be/",
+    textClass: "text-accent-green",
+    borderClass: "border-t-accent-green",
+  },
+  {
+    title: "Build Generative AI Apps and Solutions with No-Code Tools",
+    issuer: "Udemy",
+    date: "Sep 2024",
+    href: "https://springboard.udemy.com/certificate/UC-8dba5538-25e8-452c-ab49-c0d51e3036c4/",
+    textClass: "text-accent-orange",
+    borderClass: "border-t-accent-orange",
+  },
+  {
+    title: "IITM Gwalior Hackathon",
+    issuer: "Certificate of Achievement",
+    date: "Aug 2025",
+    href: "https://drive.google.com/file/d/1J9P2oOSur59QAPGNkCc98k7ELfSN6mbb/view?usp=sharing",
+    textClass: "text-accent-blue",
+    borderClass: "border-t-accent-blue",
+  },
+];
+
 export default function ExperienceSection() {
   const [activeItem, setActiveItem] = useState(EXPERIENCE[0]);
 
@@ -223,6 +282,67 @@ export default function ExperienceSection() {
                   {item.description}
                 </p>
               </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Certifications */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.5 }}
+          className="mt-12 lg:mt-16"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+            <div>
+              <h2 className="font-mono text-xl lg:text-2xl font-semibold text-text-primary mb-2">
+                Certifications
+              </h2>
+              <p className="font-mono text-xs lg:text-sm text-text-muted leading-relaxed">
+                Verified certifications and training from my resume.
+              </p>
+            </div>
+
+            <Button hoverScale={1.03} tapScale={0.97} asChild>
+              <a
+                href="/Resume.pdf"
+                download="Ronak_Kumar_Resume.pdf"
+                className="inline-flex items-center justify-center gap-2 font-mono text-xs lg:text-sm text-navy bg-accent-orange px-5 py-2.5 rounded-lg hover:bg-accent-orange/90 transition-colors font-medium cursor-pointer"
+              >
+                Download Resume
+              </a>
+            </Button>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {CERTIFICATIONS.map((cert, i) => (
+              <motion.a
+                key={`${cert.title}-${cert.issuer}`}
+                href={cert.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55 + i * 0.05, duration: 0.35 }}
+                className={`rounded-lg p-4 border border-line border-t-2 ${cert.borderClass} bg-navy-light/30 hover:-translate-y-1 hover:border-line/80 transition-all duration-300 block`}
+              >
+                <div className="flex items-center justify-between gap-3 mb-2">
+                  <span className={`font-mono text-[10px] lg:text-xs font-medium ${cert.textClass}`}>
+                    {cert.issuer}
+                  </span>
+                  <span className="font-mono text-[10px] lg:text-xs text-text-muted">
+                    {cert.date}
+                  </span>
+                </div>
+
+                <h3 className="font-mono text-xs lg:text-sm font-semibold text-text-primary leading-relaxed mb-2">
+                  {cert.title}
+                </h3>
+
+                <p className="font-mono text-[10px] lg:text-xs text-text-muted">
+                  View certificate ↗
+                </p>
+              </motion.a>
             ))}
           </div>
         </motion.div>

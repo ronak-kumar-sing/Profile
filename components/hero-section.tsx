@@ -168,7 +168,7 @@ export default function HeroSection({ setActiveTab }: HeroProps) {
             className="flex gap-3"
           >
             <a
-              href="/Resume - Ronak Kumar.pdf"
+              href="/Resume.pdf"
               download="Ronak_Kumar_Resume.pdf"
               className="flex-1 text-center font-mono text-xs text-text-muted border border-line rounded-lg px-4 py-2.5 hover:border-text-muted/50 transition-colors"
             >
@@ -265,7 +265,7 @@ export default function HeroSection({ setActiveTab }: HeroProps) {
             asChild
           >
             <a
-              href="/Resume - Ronak Kumar.pdf"
+              href="/Resume.pdf"
               download="Ronak_Kumar_Resume.pdf"
               className="font-mono text-xs lg:text-sm text-text-muted border border-line rounded-lg px-4 lg:px-6 py-2 lg:py-2.5 hover:border-text-muted/50 transition-colors cursor-pointer inline-flex items-center gap-2"
             >

@@ -106,7 +106,7 @@ export default function ContactSection() {
             >
               <Button hoverScale={1.03} tapScale={0.97} asChild>
                 <a
-                  href="/Resume - Ronak Kumar.pdf"
+                  href="/Resume.pdf"
                   download="Ronak_Kumar_Resume.pdf"
                   className="inline-flex items-center gap-2 font-mono text-xs lg:text-sm text-navy bg-accent-orange px-5 py-2.5 rounded-lg hover:bg-accent-orange/90 transition-colors font-medium cursor-pointer"
                 >

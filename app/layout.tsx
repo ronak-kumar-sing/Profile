@@ -17,7 +17,19 @@ export const metadata: Metadata = {
   description:
     "Software engineer focused on building premium web and mobile experiences",
   icons: {
-    icon: "/icon.svg",
+    icon: "/favicon.ico",
+    apple: "/profile.png",
+  },
+  openGraph: {
+    title: "Ronak Kumar | Portfolio",
+    description: "Software engineer focused on building premium web and mobile experiences",
+    images: [
+      {
+        url: "/profile.jpeg",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

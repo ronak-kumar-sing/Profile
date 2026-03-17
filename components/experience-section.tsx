@@ -20,7 +20,7 @@ const EXPERIENCE = [
       "Focused on UI/UX design patterns",
       "Worked in agile team environment",
     ],
-    logo: "GD",
+    logo: "EXP",
   },
   {
     type: "edu",

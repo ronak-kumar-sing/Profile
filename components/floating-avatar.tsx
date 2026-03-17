@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import {
   TooltipProvider,
   Tooltip,
@@ -30,9 +31,13 @@ export default function FloatingAvatar() {
                 href="mailto:ronakkumar20062006@gmail.com"
                 className="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-linear-to-br from-blue-600 to-violet-700 flex items-center justify-center text-2xl shadow-lg shadow-blue-900/30 border-2 border-blue-700/30 overflow-hidden cursor-pointer"
               >
-                <span role="img" aria-label="avatar" className="text-xl lg:text-2xl">
-                  👋
-                </span>
+                <Image
+                  src="/profile.jpeg"
+                  alt="Ronak Kumar"
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-cover"
+                />
               </a>
             </Button>
           </TooltipTrigger>

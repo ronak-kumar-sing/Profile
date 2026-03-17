@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import ProjectCard from "./project-card";
 import LogoRow from "./logo-row";
 import LiveStreaks from "./live-streaks";
@@ -51,8 +52,14 @@ export default function HeroSection({ setActiveTab }: HeroProps) {
             transition={{ duration: 0.5 }}
             className="flex items-start justify-between mb-5"
           >
-            <div className="w-[76px] h-[76px] rounded-full bg-gradient-to-br from-blue-600 to-violet-700 flex items-center justify-center border-2 border-blue-700/30 shadow-lg shadow-blue-900/20">
-              <span className="text-3xl">👋</span>
+            <div className="w-[76px] h-[76px] rounded-full bg-gradient-to-br from-blue-600 to-violet-700 flex items-center justify-center border-2 border-blue-700/30 shadow-lg shadow-blue-900/20 overflow-hidden">
+              <Image
+                src="/profile.jpeg"
+                alt="Ronak Kumar"
+                width={76}
+                height={76}
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="font-mono text-[10px] text-accent-green border border-accent-green/30 rounded-full px-3 py-1.5 bg-accent-green/5 mt-1">
               Open to work ▾

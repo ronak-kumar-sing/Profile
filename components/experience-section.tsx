@@ -32,6 +32,7 @@ const EXPERIENCE = [
     description:
       "Pursuing Bachelor of Technology in Computer Science. Active participant in hackathons, coding clubs, and college tech events. Focusing on full-stack development and algorithms.",
     highlights: [
+      "Current CGPA: 7.44",
       "5+ hackathon participations",
       "150+ LeetCode problems solved",
       "Active in coding clubs & tech events",

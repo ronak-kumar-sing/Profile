@@ -27,6 +27,7 @@ const SKILLS = [
   { name: "Tailwind", symbol: "◆" },
   { name: "React Native", symbol: "📱" },
   { name: "Node.js", symbol: "⬡" },
+  { name: "MongoDB", symbol: "🍃" },
 ];
 
 interface HeroProps {
@@ -93,7 +94,7 @@ export default function HeroSection({ setActiveTab }: HeroProps) {
             transition={{ delay: 0.12, duration: 0.5 }}
             className="font-mono text-xs text-text-muted leading-relaxed mb-4"
           >
-            🚀 React | Next.js | React Native | TypeScript | Node.js | Full Stack Developer &amp; Open Source Enthusiast
+            🚀 React | Next.js | React Native | MongoDB | TypeScript | Node.js | Full Stack Developer &amp; Open Source Enthusiast
           </motion.p>
 
           {/* Skill Tags */}

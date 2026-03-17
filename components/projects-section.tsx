@@ -89,7 +89,7 @@ const projectDetails: Record<string, ProjectDetail> = {
     ],
     tech: {
       languages: "PHP, JavaScript",
-      tools: "MySQL, REST APIs",
+      tools: "MySQL, REST APIs, MongoDB",
       frameworks: "Tailwind CSS",
     },
   },

@@ -14,25 +14,25 @@ import { Button } from "@/components/animate-ui/primitives/buttons/button";
 const services = [
   {
     icon: Code,
-    title: "Frontend Wizard ✨",
+    title: "Frontend Developer",
     description:
       "Crafting sleek, responsive UIs with React, React Native & Tailwind — turning ideas into polished user experiences.",
   },
   {
     icon: Server,
-    title: "Backend Explorer 🚀",
+    title: "Backend Developer",
     description:
       "Building robust APIs and databases with Node.js, PHP & MySQL — the brain behind the beauty.",
   },
   {
     icon: Trophy,
-    title: "Problem Solver ⚡",
+    title: "Problem Solver ",
     description:
       "From LeetCode to hackathons — I love cracking complex problems and shipping clever solutions under pressure.",
   },
   {
     icon: BookOpen,
-    title: "Lifelong Learner 📚",
+    title: "Lifelong Learner ",
     description:
       "Curious, adaptable & always hungry for challenges — every project is a new adventure worth exploring.",
   },

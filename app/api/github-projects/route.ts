@@ -102,7 +102,7 @@ export async function GET() {
           stars: 0,
           forks: 0,
           language: 'TypeScript',
-          topics: ['react-native', 'expo', 'nextjs', 'ai', 'gemini'``],
+          topics: ['react-native', 'expo', 'nextjs', 'ai', 'gemini'],
           updatedAt: new Date().toISOString(),
           isPinned: true,
         },
